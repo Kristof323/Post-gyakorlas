@@ -3,51 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webshop rendelés</title>
+    <title>
+        Webshop rendelések
+    </title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <h1>WEBSHOP</h1>
 
-    <% if (success) { %>
-        <div class="success">A rendelés leadása sikeres volt.</div>
-    <% } %>
-
-    <% if (errors && errors.length > 0) { %>
-        <div class="error">
-            <ul>
-                <% errors.forEach(function(error) { %>
-                    <li><%= error %></li>
-                <% }); %>
-            </ul>
-        </div>
-    <% } %>
-
     <form action="" method="POST">
-        <input type="text" name="name" placeholder="Név" pattern="^.{2,80}$" value="<%= ((form && form.name) || '') %>" required>
+        <input type="text" name="name" placeholder="Név" pattern="^.{2,80}$" required>
         <hr>
         <h2>Számlázási cím</h2>
-        <input type="text" name="city" placeholder="Város" pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű .-]{2,50}$" value="<%= ((form && form.city) || '') %>" required>
-        <input type="text" name="zip code" placeholder="Irányítószám" pattern="^\d{4}$" value="<%= ((form && form['zip code']) || '') %>" required>
-        <input type="text" name="street" placeholder="Utca" pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű .-]+$" value="<%= ((form && form.street) || '') %>" required>
-        <input type="text" name="house number" placeholder="Házszám" pattern="^\d+[a-z]?$" value="<%= ((form && form['house number']) || '') %>" required>
+        <input type="text" name="city" placeholder="Város" pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű .-]{2,50}$" required>
+        <input type="text" name="zip code" placeholder="Irányítószám" pattern="^\d{4}$" required>
+        <input type="text" name="street" placeholder="Utca" pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű .-]+$" required>
+        <input type="text" name="house number" placeholder="Házszám" pattern="^\d+[a-z]?$" required>
         <hr>
         <h2>Szállítási cím</h2>
-        <input type="text" name="s-city" placeholder="Város" pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű .-]{2,50}$" value="<%= ((form && form['s-city']) || '') %>" required>
-        <input type="text" name="s-zip code" placeholder="Irányítószám" pattern="^\d{4}$" value="<%= ((form && form['s-zip code']) || '') %>" required>
-        <input type="text" name="s-street" placeholder="Utca" pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű .-]+$" value="<%= ((form && form['s-street']) || '') %>" required>
-        <input type="text" name="s-house number" placeholder="Házszám" pattern="^\d+[a-z]?$" value="<%= ((form && form['s-house number']) || '') %>" required>
+        <input type="text" name="s-city" placeholder="Város" pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű .-]{2,50}$" required>
+        <input type="text" name="s-zip code" placeholder="Irányítószám" pattern="^\d{4}$" required>
+        <input type="text" name="s-street" placeholder="Utca" pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű .-]+$" required>
+        <input type="text" name="s-house number" placeholder="Házszám" pattern="^\d+[a-z]?$" required>
         <hr>
         <h2>Elérhetőség</h2>
-        <input type="tel" name="phone" placeholder="+36 20 123 4567" pattern="^(\+36|\+36[\s-]?)\d{2}[\s-]?\d{3}[\s-]?\d{3,4}$" value="<%= ((form && form.phone) || '') %>" required>
-        <input type="text" name="Cupon code" placeholder="Kupon kód" pattern="^[A-Z]{2}-\d{4}$" value="<%= ((form && form['Cupon code']) || '') %>" required>
+        <input type="tel" name="phone" placeholder="+36 20 123 4567" pattern="^(\+36|\+36[\s-]?)\d{2}[\s-]?\d{3}[\s-]?\d{3,4}$" required>
+        <input type="text" name="Cupon code" placeholder="Kupon kód" pattern="^[A-Z]{2}-\d{4}$" required>
         <hr>
         <h2>Fizetés (Bankkártya)</h2>
-        <input type="text" name="card number" placeholder="Kártya szám" pattern="^\d{4}(-\d{4}){3}$" value="<%= ((form && form['card number']) || '') %>" required>
-        <input type="text" name="expiry date" placeholder="Lejárat dátuma" pattern="^(0[1-9]|1[0-2])/\d{2}$" value="<%= ((form && form['expiry date']) || '') %>" required>
-        <input type="text" name="cvv" placeholder="CVV" pattern="^\d{3}$" value="<%= ((form && form.cvv) || '') %>" required>
+        <input type="text" name="card number" placeholder="Kártya szám" pattern="^\d{4}(-\d{4}){3}$" required>
+        <input type="text" name="expiry date" placeholder="Lejárat dátuma" pattern="^(0[1-9]|1[0-2])/\d{2}$" required>
+        <input type="text" name="cvv" placeholder="CVV" pattern="^\d{3}$" required>
         <hr>
-        <button type="submit">Rendelés leadása</button>
     </form>
+
+    
+    
 </body>
 </html>
